@@ -8,14 +8,16 @@ int main()
     printf("La palabra es %s", palabra); 
     int count = strlen(palabra);
      char inverso[count];
-    for (int i = count; 0 <= i; i--)
+    for (int i = count -1; 0 <= i; i--)
     {
-
-        for (int j = 0; j <= count; j++)
+         printf("La palabra tiene %d\n", i); 
+        for (int j = 0; j <=count-1; j++)
         {
-            printf("palabra %c\n", inverso[i]);
-            printf("inverso %c\n", inverso[j]);
-           inverso[j] = palabra[i];
+            printf("La le quita %d\n", j);
+            if (j!=i)
+            {
+                inverso[j] = palabra[i];
+            }   
         }      
     }
     printf("inverso %s\n", inverso);
