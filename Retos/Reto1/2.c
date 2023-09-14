@@ -11,7 +11,7 @@ int main()
     }
     for (int i = 0; i < 5; i++)
     {
-        printf("Nombre n %d \n %s \n", i+1, nombres[i]);
+        printf("Nombre n%d \n %s \n", i+1, nombres[i]);
     }
     
     return 0;
