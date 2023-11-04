@@ -35,7 +35,9 @@
 *.i*86
 *.x86_64
 *.hex
-
+*.out
+*.o
+*.exe
 # Debug files
 *.dSYM/
 *.su
@@ -50,3 +52,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignore a file without extension
+relative/path/to/dir/anotherfile
+Apuntes/output/control1-1
+Apuntes/output/control1-3
+Labs/Control2/output/1
+Retos/Reto1/output/1
+Retos/Guia2/output/1
+Apuntes/Guia_2/output/Prueba
+Apuntes/Guia_2/output/1
