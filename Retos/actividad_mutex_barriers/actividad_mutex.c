@@ -14,18 +14,18 @@ pthread_barrier_t barrera;
         pthread_mutex_lock(&mutexg);
         pthread_t id = pthread_self();
 
-        printf("hilo %lu ingreso al recurso compartido\n", id);
+        printf("Hilo %lu ingreso al recurso compartido\n", id);
 
         recurso = (recurso + 5) * 2;
 
-        printf("hilo %lu realizando operacion Resultado operacion:\t%d\n", id ,recurso);
+        printf("Hilo %lu Resultado operacion:\t%d\n", id ,recurso);
 
-        printf("hilo %lu salio del recurso compartido\n", id);
+        printf("Hilo %lu salio del recurso compartido\n", id);
 
         pthread_mutex_unlock(&mutexg);
         pthread_barrier_wait(&barrera);
-        
-        printf("hilo %lu termino su espera\n", id);
+
+        printf("Hilo %lu termino su espera\n", id);
 
         return NULL;
     }
@@ -45,6 +45,8 @@ pthread_barrier_t barrera;
 
     pthread_mutex_destroy(&mutexg);
     pthread_barrier_destroy(&barrera);
+
+    printf("Resultado de la operacion matematica:\t%d\n", recurso);
     
     return 0;
 
