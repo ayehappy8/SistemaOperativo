@@ -17,7 +17,7 @@ pthread_barrier_t barrera;
 
         recurso = (recurso + 5) * 2;
 
-        printf("Hilo %lu Resultado operacion:\t%d\n", id ,recurso);
+        printf("Hilo %lu resultado operacion:\t%d\n", id ,recurso);
 
         printf("Hilo %lu salio del recurso compartido\n", id);
 
