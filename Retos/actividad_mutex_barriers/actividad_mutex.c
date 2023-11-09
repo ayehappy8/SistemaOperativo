@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <time.h>
 #include <pthread.h>
 #include <stdlib.h>
 
-#define NUMTHREAD 3;
+#define NUMTHREAD 3
 int recurso = 5;
 
 pthread_mutex_t mutexg;
@@ -34,7 +33,7 @@ pthread_barrier_t barrera;
 {
     pthread_t th1, th2, th3;
     pthread_mutex_init(&mutexg, NULL);
-    pthread_barrier_init(&barrera, NULL, 3);
+    pthread_barrier_init(&barrera, NULL, NUMTHREAD);
     pthread_create(&th1, NULL, Hilos, NULL);
     pthread_create(&th2, NULL, Hilos, NULL);
     pthread_create(&th3, NULL, Hilos, NULL);
