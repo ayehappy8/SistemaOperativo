@@ -18,7 +18,8 @@ void *procesoA()
     {
         sem_wait(&semaforoA);
         printf("A");
-        sem_post(&semaforoB);
+        printf(",");
+        sem_post(&semaforoC);
     }
     
     pthread_exit(NULL);
@@ -31,7 +32,7 @@ void *procesoB()
     {
         sem_wait(&semaforoB);
         printf("B");
-        sem_post(&semaforoC);
+        sem_post(&semaforoA);
     }
 
     pthread_exit(NULL);
@@ -44,8 +45,7 @@ void *procesoC()
     {
         sem_wait(&semaforoC);
         printf("C");
-        printf(",");
-        sem_post(&semaforoA);
+        sem_post(&semaforoB);
     }
 
     pthread_exit(NULL);
@@ -55,11 +55,12 @@ int main()
 {
     pthread_t hilos[NUM_THEREADS];
     void *(*procesos[NUM_THEREADS])(void *) ={procesoA, procesoB, procesoC}; 
+    int hilos_id[NUM_THEREADS];
     
     
-    sem_init(&semaforoA, 0, 1);
+    sem_init(&semaforoA, 0, 0);
     sem_init(&semaforoB, 0, 0);
-    sem_init(&semaforoC, 0, 0);
+    sem_init(&semaforoC, 0, 1);
 
 
     //creation of threads
