@@ -7,7 +7,6 @@ int recurso = 5;
 
 pthread_mutex_t mutexg;
 pthread_barrier_t barrera;
-
     void *Hilos()
     {
         pthread_mutex_lock(&mutexg);

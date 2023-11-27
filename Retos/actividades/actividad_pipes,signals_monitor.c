@@ -35,7 +35,6 @@ void* monitor_funcion(){
     read(tuneles[tunel_id]->recurso[0], &auto_id, sizeof(int));
     printf("el Auto solicitante es %d\n",auto_id);
 
-
 }
 
 void entrado_tunel(tunel_id, auto_id){
